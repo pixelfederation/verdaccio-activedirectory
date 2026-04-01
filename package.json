@@ -1,7 +1,7 @@
 {
-  "name": "verdaccio-activedirectory",
+  "name": "verdaccio-activedirectory-pxfd",
   "version": "1.0.1",
-  "description": "Active Directory authentication plugin for verdaccio",
+  "description": "Active Directory authentication plugin for verdaccio (pxfd fork)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nowhammies/verdaccio-activedirectory.git"
+    "url": "https://github.com/eufebius/verdaccio-activedirectory.git"
   },
   "dependencies": {
     "activedirectory": "^0.7.2",

@@ -14,8 +14,10 @@ function Plugin(config, stuff) {
 Plugin.prototype.authenticate = function(user, password, callback) {
 	var self = this;
 	var username = user + '@' + this._config.domainSuffix;
-	
-	var connection = new ActiveDirectory(_.extend(this._config, { username: username, password: password }));
+
+	var rejectUnauthorized = (typeof self._config.rejectUnauthorized !== 'undefined') ? self._config.rejectUnauthorized : true;
+
+	var connection = new ActiveDirectory(_.extend(this._config, { username: username, password: password, tlsOptions: { rejectUnauthorized: rejectUnauthorized } }));
 	connection.on('error', function(error) {
 		self._logger.warn('Active Directory connection error. Error:', error);
 	});

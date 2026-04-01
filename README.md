@@ -1,11 +1,11 @@
-# verdaccio-activedirectory
-Active Directory authentication plugin for verdaccio
+# verdaccio-activedirectory-pxfd
+Active Directory authentication plugin for verdaccio (pxfd fork)
 
 
 ## Installation
 
 ```sh
-$ npm install verdaccio-activedirectory
+$ npm install verdaccio-activedirectory-pxfd
 ```
 
 ## Config
@@ -19,6 +19,7 @@ auth:
     baseDN: 'dc=sample,dc=local'
     domainSuffix: 'sample.local'
     groupName: 'npmWriters' # optional
+    rejectUnauthorized: true
 ```
 
 Alternatively, if your config.yaml uses multiple security groups, you can provide a yaml sequence:
