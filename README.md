@@ -19,8 +19,10 @@ auth:
     baseDN: 'dc=sample,dc=local'
     domainSuffix: 'sample.local'
     groupName: 'npmWriters' # optional
-    rejectUnauthorized: true
+    rejectUnauthorized: true # (optional) If set to false, the server will accept connections even if they are not authorized by the list of supplied CAs. Default is true (recommended). For more details, see the Node.js documentation: https://nodejs.org/api/tls.html#tlscreateserveroptions-secureconnectionlistener
 ```
+
+
 
 Alternatively, if your config.yaml uses multiple security groups, you can provide a yaml sequence:
 
@@ -87,3 +89,5 @@ packages:
     access: $all
     proxy: npmjs
 ```
+
+For more information about TLS options and rejectUnauthorized, refer to the Node.js documentation: [TLS Server Options](https://nodejs.org/api/tls.html#tlscreateserveroptions-secureconnectionlistener)
