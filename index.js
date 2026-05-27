@@ -35,7 +35,7 @@ Plugin.prototype.authenticate = function(user, password, callback) {
 		}
 
 		if(self._config.groupName) {	
-			connection.getGroupMembershipForUser(username, function(err, userGroups){
+			connection.getGroupMembershipForUser(user, function(err, userGroups){
 				if (err) {
 					self._logger.warn('Active Directory group check failed. Error code:', err.code + '.', 'Error:\n', err);
 					return callback(err);
